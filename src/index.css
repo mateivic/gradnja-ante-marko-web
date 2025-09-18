@@ -9,8 +9,8 @@
     --background: 220 15% 8%;
     --foreground: 0 0% 98%;
 
-    --construction-yellow: 45 100% 55%;
-    --construction-yellow-hover: 45 100% 45%;
+    --construction-red: 0 100% 55%;
+    --construction-red-hover: 0 100% 45%;
     --construction-dark: 220 20% 12%;
     --construction-darker: 220 25% 6%;
     --construction-light: 220 10% 20%;
@@ -23,8 +23,8 @@
     --popover: var(--construction-dark);
     --popover-foreground: 0 0% 98%;
 
-    --primary: var(--construction-yellow);
-    --primary-foreground: var(--construction-darker);
+    --primary: var(--construction-red);
+    --primary-foreground: 0 0% 98%;
 
     --secondary: var(--construction-light);
     --secondary-foreground: 0 0% 98%;
@@ -32,22 +32,22 @@
     --muted: var(--construction-light);
     --muted-foreground: var(--construction-gray);
 
-    --accent: var(--construction-yellow);
-    --accent-foreground: var(--construction-darker);
+    --accent: var(--construction-red);
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: var(--construction-light);
     --input: var(--construction-light);
-    --ring: var(--construction-yellow);
+    --ring: var(--construction-red);
 
     --radius: 0.5rem;
 
     /* Custom gradients and effects */
     --gradient-hero: linear-gradient(135deg, var(--construction-darker) 0%, var(--construction-dark) 100%);
-    --gradient-accent: linear-gradient(45deg, var(--construction-yellow), var(--construction-yellow-hover));
-    --shadow-construction: 0 10px 40px -10px hsl(var(--construction-yellow) / 0.3);
+    --gradient-accent: linear-gradient(45deg, var(--construction-red), var(--construction-red-hover));
+    --shadow-construction: 0 10px 40px -10px hsl(var(--construction-red) / 0.3);
     --shadow-elegant: 0 4px 20px -4px hsl(220 25% 6% / 0.6);
 
     --sidebar-background: var(--construction-dark);

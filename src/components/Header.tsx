@@ -33,10 +33,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">AM</span>
-            </div>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/src/assets/logo.png" 
+              alt="Gradnja Ante i Marko logo" 
+              className="h-12 w-auto"
+            />
             <div>
               <h1 className="text-xl font-bold text-foreground">
                 Gradnja Ante i Marko
