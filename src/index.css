@@ -6,65 +6,65 @@
 
 @layer base {
   :root {
-    --background: 220 15% 8%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 100%;
+    --foreground: 220 15% 15%;
 
     --construction-red: 0 100% 55%;
     --construction-red-hover: 0 100% 45%;
-    --construction-dark: 220 20% 12%;
-    --construction-darker: 220 25% 6%;
-    --construction-light: 220 10% 20%;
-    --construction-gray: 220 8% 60%;
-    --construction-light-gray: 220 12% 85%;
+    --construction-light-gray: 220 12% 96%;
+    --construction-gray: 220 8% 85%;
+    --construction-dark-gray: 220 10% 70%;
+    --construction-border-gray: 220 13% 91%;
+    --construction-muted-gray: 220 15% 60%;
 
-    --card: var(--construction-dark);
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
 
-    --popover: var(--construction-dark);
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
 
     --primary: var(--construction-red);
-    --primary-foreground: 0 0% 98%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: var(--construction-light);
-    --secondary-foreground: 0 0% 98%;
+    --secondary: var(--construction-light-gray);
+    --secondary-foreground: 220 15% 15%;
 
-    --muted: var(--construction-light);
-    --muted-foreground: var(--construction-gray);
+    --muted: var(--construction-light-gray);
+    --muted-foreground: var(--construction-muted-gray);
 
     --accent: var(--construction-red);
-    --accent-foreground: 0 0% 98%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: var(--construction-light);
-    --input: var(--construction-light);
+    --border: var(--construction-border-gray);
+    --input: var(--construction-border-gray);
     --ring: var(--construction-red);
 
     --radius: 0.5rem;
 
     /* Custom gradients and effects */
-    --gradient-hero: linear-gradient(135deg, var(--construction-darker) 0%, var(--construction-dark) 100%);
+    --gradient-hero: linear-gradient(135deg, var(--construction-light-gray) 0%, var(--construction-gray) 100%);
     --gradient-accent: linear-gradient(45deg, var(--construction-red), var(--construction-red-hover));
     --shadow-construction: 0 10px 40px -10px hsl(var(--construction-red) / 0.3);
-    --shadow-elegant: 0 4px 20px -4px hsl(220 25% 6% / 0.6);
+    --shadow-elegant: 0 4px 20px -4px hsl(220 15% 15% / 0.1);
 
-    --sidebar-background: var(--construction-dark);
+    --sidebar-background: 0 0% 100%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-foreground: 220 15% 15%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary: 220 15% 15%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent: var(--construction-light-gray);
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent-foreground: 220 15% 15%;
 
-    --sidebar-border: 220 13% 91%;
+    --sidebar-border: var(--construction-border-gray);
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: var(--construction-red);
   }
 
   /* Dark theme is our primary theme */
@@ -108,8 +108,8 @@
 
   /* Construction card styles */
   .construction-card {
-    @apply bg-card rounded-xl p-6 border border-border/20;
-    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--construction-light)));
+    @apply bg-card rounded-xl p-6 border border-border/50;
+    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--construction-light-gray)));
     backdrop-filter: blur(10px);
   }
 
