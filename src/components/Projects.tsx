@@ -4,59 +4,59 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Kamene skale Skradin",
+      title: "Uređenje stepenica Skradin",
       category: "Građevinski radovi",
       image: "skale-skradin.jpg",
-      description: "Kompletan građevinski projekt pod nadzorom konzervatora"
+      description: "Radovi na kulturnom dobru - uređenje stepenica u ulici Mate Klarića"
     },
     {
       id: 2,
-      title: "Dječji park Dubravice",
+      title: "Dječje igralište Dubravice",
       category: "Građevinski radovi",
       image: "park-graovo.jpg",
-      description: "Kompletni građevinski projekt izgradnje dječjeg parka"
+      description: "Kompletni građevinski radovi na izgradnji dječjeg igrališta u Dubravicama"
     },
     {
       id: 3,
       title: "Javna rasvjeta Dubravice",
       category: "Elektrotehničke instalacije",
       image: "rasvjeta-graovo.jpg",
-      description: "Kompletne elektrotehničke instalacije javne rasvjete"
+      description: "Izgradnja javne rasvjete uz županijsku cestu u Dubravicama"
     },
     {
       id: 4,
-      title: "Rasvjeta Skradin",
+      title: "Rasvjeta Mala Jaruga",
       category: "Elektrotehničke instalacije",
       image: "rasvjeta-skradin.jpg",
-      description: "Kompletne elektrotehničke instalacije javne rasvjete"
+      description: "Izgradnja rasvjete u komunalnoj luci Mala Jaruga u Skradinu"
     },
     {
       id: 5,
-      title: "Rasvjeta na gradskoj rivi Skradin",
+      title: "Rasvjeta riva Skradin",
       category: "Elektrotehničke instalacije",
       image: "skradin-gat-2.jpg",
-      description: "Kompletne elektrotehničke instalacije javne i dekorativne rasvjete"
+      description: "Izgradnja rasvjete na gradskoj rivi u Skradinu"
     },
     {
       id: 6,
       title: "Rasvjeta na stadionu NK Sošk",
       category: "Elektrotehničke instalacije",
       image: "stadion-sosk.jpg",
-      description: "Kompletne elektrotehničke instalacije na reflektorima stadiona"
+      description: "Građevinski i elektroinstalaterski radovi ugradnje reflektora na stadionu NK Sošk"
     },
     {
       id: 7,
-      title: "Izrada trafostanice Podi",
+      title: "Uređenje trafostanice",
       category: "Elektrotehničke instalacije",
       image: "trafostanica.jpg",
-      description: "Kompletne elektrotehničke instalacije na trafostanici"
+      description: "Elektromontažni radovi na trafostanici i uređenje okoliša trafostanice"
     },
     {
       id: 8,
-      title: "Kameni zid",
+      title: "Gabijanski zid",
       category: "Građevinski radovi",
       image: "zid.jpg",
-      description: "Kompletni radovi iskopavanja i izrade kamenog zida"
+      description: "Izrada potpornog gabijanskog zida i sanacija prometnice"
     }
   ];
 
@@ -134,7 +134,7 @@ const Projects = () => {
               <div className="text-muted-foreground">Zadovoljnih klijenata</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">6+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">7+</div>
               <div className="text-muted-foreground">Godina iskustva</div>
             </div>
           </div>

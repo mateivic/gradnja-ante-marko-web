@@ -52,7 +52,7 @@ const Services = () => {
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Pružamo kompletan spektar građevinskih i elektrotehničkih usluga
-              za sve vrste projekata - od malih radova do velikih gradilišta.
+              za sve vrste projekata.
             </p>
           </div>
 

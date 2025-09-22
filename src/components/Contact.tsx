@@ -38,7 +38,7 @@ const Contact = () => {
         email: formData.email,
         phone: formData.phone || 'Nije naveden',
         message: formData.message,
-        sendTo: "mateivic3007@gmail.com",
+        sendTo: "marko.mandusic8@gmail.com",
         timestamp: new Date().toISOString(),
         source: 'Website Contact Form'
       };

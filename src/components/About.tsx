@@ -68,14 +68,12 @@ const About = () => {
 
             {/* Image placeholder - could be replaced with actual photo */}
             <div className="relative">
-              <div className="construction-card h-80 flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                  <Users className="w-16 h-16 mx-auto mb-4 text-primary" />
-                  <h4 className="text-xl font-semibold mb-2">Ante i Marko</h4>
-                  <p>Osnivači i vlasnici</p>
-                  <p className="text-sm mt-2">Od 2018. godine</p>
-                </div>
-              </div>
+              <div
+                className="h-80 bg-cover bg-center bg-no-repeat rounded-xl"
+                style={{
+                  backgroundImage: `url(/assets/ante-marko.jpg)`,
+                }}
+              />
               {/* Decorative element */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-xl"></div>
             </div>
