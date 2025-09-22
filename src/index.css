@@ -78,6 +78,12 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Inter", system-ui, -apple-system, sans-serif;
+    padding-top: 5rem; /* Account for fixed header height (h-20 = 5rem) */
+  }
+
+  /* Ensure header respects safe area on mobile devices */
+  .safe-area-inset-top {
+    padding-top: env(safe-area-inset-top);
   }
 
   html {

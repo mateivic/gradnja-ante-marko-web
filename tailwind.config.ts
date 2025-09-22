@@ -80,10 +80,19 @@ export default {
             height: "0",
           },
         },
+        "zoom-in": {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "100%": {
+            transform: "scale(1.05)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "zoom-in": "zoom-in 5s ease-in-out infinite alternate",
       },
     },
   },

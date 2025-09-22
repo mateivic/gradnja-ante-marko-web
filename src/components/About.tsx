@@ -25,7 +25,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-secondary/20">
+    <section id="o-nama" className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -34,8 +34,8 @@ const About = () => {
               O <span className="text-primary">nama</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Osnovali smo tvrtku 2018. godine s ciljem pružanja vrhunskih građevinskih 
-              i elektrotehničkih usluga. Naše iskustvo i predanost kvaliteti čine nas 
+              Osnovali smo tvrtku 2018. godine s ciljem pružanja vrhunskih građevinskih
+              i elektrotehničkih usluga. Naše iskustvo i predanost kvaliteti čine nas
               idealnim partnerom za vaš sljedeći projekt.
             </p>
           </div>
@@ -49,18 +49,18 @@ const About = () => {
               </h3>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Ante i Marko su dugogodišnji prijatelji koji su spojili svoju strast 
-                  prema građevinarstvu i stručnost u jednu uspješnu tvrtku. Naša misija 
+                  Ante i Marko su dugogodišnji prijatelji koji su spojili svoju strast
+                  prema građevinarstvu i stručnost u jednu uspješnu tvrtku. Naša misija
                   je pružiti klijentima usluge najviše kvalitete uz poštovanje rokova i budžeta.
                 </p>
                 <p>
-                  Specijalizirani smo za izvođenje građevinskih radova, elektrotehničke 
-                  instalacije, nadzor projekata i iskope. Bez obzira na veličinu projekta, 
+                  Specijalizirani smo za izvođenje građevinskih radova, elektrotehničke
+                  instalacije i stručni nadzor projekata. Bez obzira na veličinu projekta,
                   pristupamo svakom poslu s istom pažnjom i profesionalnošću.
                 </p>
                 <p>
-                  Naši klijenti uključuju poslovne subjekte koji traže pouzdane partnere 
-                  za velike projekte, kao i privatne osobe koje žele kvalitetno obaviti 
+                  Naši klijenti uključuju poslovne subjekte koji traže pouzdane partnere
+                  za velike projekte, kao i privatne osobe koje žele kvalitetno obaviti
                   radove na svojim nekretninama.
                 </p>
               </div>

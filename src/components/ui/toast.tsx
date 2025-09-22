@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cva, type VariantProps } from "class-variance-authority";
-import { X } from "lucide-react";
+import { X, CheckCircle, AlertCircle } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -29,6 +29,7 @@ const toastVariants = cva(
       variant: {
         default: "border bg-background text-foreground",
         destructive: "destructive group border-destructive bg-destructive text-destructive-foreground",
+        success: "border-green-200 bg-green-50 text-green-900 dark:border-green-800 dark:bg-green-900/20 dark:text-green-100",
       },
     },
     defaultVariants: {
@@ -94,6 +95,31 @@ const ToastDescription = React.forwardRef<
 ));
 ToastDescription.displayName = ToastPrimitives.Description.displayName;
 
+const ToastIcon = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & {
+    variant?: "default" | "destructive" | "success";
+  }
+>(({ className, variant = "default", ...props }, ref) => {
+  const getIcon = () => {
+    switch (variant) {
+      case "success":
+        return <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400" />;
+      case "destructive":
+        return <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400" />;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div ref={ref} className={cn("flex-shrink-0", className)} {...props}>
+      {getIcon()}
+    </div>
+  );
+});
+ToastIcon.displayName = "ToastIcon";
+
 type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>;
 
 type ToastActionElement = React.ReactElement<typeof ToastAction>;
@@ -108,4 +134,5 @@ export {
   ToastDescription,
   ToastClose,
   ToastAction,
+  ToastIcon,
 };

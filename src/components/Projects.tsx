@@ -4,57 +4,71 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Poslovni centar Zagreb",
+      title: "Kamene skale Skradin",
       category: "Građevinski radovi",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92157aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      description: "Kompletan građevinski projekt uključujući fasadne radove i unutarnje instalacije"
+      image: "skale-skradin.jpg",
+      description: "Kompletan građevinski projekt pod nadzorom konzervatora"
     },
     {
       id: 2,
-      title: "Industrijski kompleks Rijeka",
-      category: "Elektrotehničke instalacije",
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      description: "Kompletne elektrotehničke instalacije za proizvodni pogon"
+      title: "Dječji park Dubravice",
+      category: "Građevinski radovi",
+      image: "park-graovo.jpg",
+      description: "Kompletni građevinski projekt izgradnje dječjeg parka"
     },
     {
       id: 3,
-      title: "Obiteljska kuća Split",
-      category: "Privatni projekt",
-      image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      description: "Izgradnja moderne obiteljske kuće s kompletnim instalacijama"
+      title: "Javna rasvjeta Dubravice",
+      category: "Elektrotehničke instalacije",
+      image: "rasvjeta-graovo.jpg",
+      description: "Kompletne elektrotehničke instalacije javne rasvjete"
     },
     {
       id: 4,
-      title: "Rekonstrukcija ureda Osijek",
-      category: "Građevinski radovi",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      description: "Potpuna rekonstrukcija poslovnog prostora s modernim dizajnom"
+      title: "Rasvjeta Skradin",
+      category: "Elektrotehničke instalacije",
+      image: "rasvjeta-skradin.jpg",
+      description: "Kompletne elektrotehničke instalacije javne rasvjete"
     },
     {
       id: 5,
-      title: "Parking garaža Zadar",
-      category: "Beton i iskopi",
-      image: "https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      description: "Betoniranje i iskopi za podzemnu parking garažu"
+      title: "Rasvjeta na gradskoj rivi Skradin",
+      category: "Elektrotehničke instalacije",
+      image: "skradin-gat-2.jpg",
+      description: "Kompletne elektrotehničke instalacije javne i dekorativne rasvjete"
     },
     {
       id: 6,
-      title: "Trgovački centar Dubrovnik",
-      category: "Nadzor projekta",
-      image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      description: "Tehnički nadzor izgradnje velikog trgovačkog centra"
+      title: "Rasvjeta na stadionu NK Sošk",
+      category: "Elektrotehničke instalacije",
+      image: "stadion-sosk.jpg",
+      description: "Kompletne elektrotehničke instalacije na reflektorima stadiona"
+    },
+    {
+      id: 7,
+      title: "Izrada trafostanice Podi",
+      category: "Elektrotehničke instalacije",
+      image: "trafostanica.jpg",
+      description: "Kompletne elektrotehničke instalacije na trafostanici"
+    },
+    {
+      id: 8,
+      title: "Kameni zid",
+      category: "Građevinski radovi",
+      image: "zid.jpg",
+      description: "Kompletni radovi iskopavanja i izrade kamenog zida"
     }
   ];
 
-  const categories = ["Svi projekti", "Građevinski radovi", "Elektrotehničke instalacije", "Privatni projekt", "Beton i iskopi", "Nadzor projekta"];
+  const categories = ["Svi projekti", "Građevinski radovi", "Elektrotehničke instalacije"];
   const [activeCategory, setActiveCategory] = useState("Svi projekti");
 
-  const filteredProjects = activeCategory === "Svi projekti" 
-    ? projects 
+  const filteredProjects = activeCategory === "Svi projekti"
+    ? projects
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="projects" className="py-20 bg-secondary/20">
+    <section id="projekti" className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -63,7 +77,7 @@ const Projects = () => {
               Naši <span className="text-primary">projekti</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Pogledajte neke od naših uspješno završenih projekata. 
+              Pogledajte neke od naših uspješno završenih projekata.
               Svaki projekt predstavlja našu predanost kvaliteti i profesionalnosti.
             </p>
 
@@ -73,11 +87,10 @@ const Projects = () => {
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    activeCategory === category
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-card text-foreground hover:bg-primary/20"
-                  }`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeCategory === category
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-card text-foreground hover:bg-primary/20"
+                    }`}
                 >
                   {category}
                 </button>
@@ -86,7 +99,7 @@ const Projects = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
@@ -97,12 +110,11 @@ const Projects = () => {
               >
                 <div
                   className="h-64 bg-cover bg-center rounded-xl"
-                  style={{ backgroundImage: `url(${project.image})` }}
+                  style={{ backgroundImage: `url(/assets/${project.image})` }}
                 >
                   <div className="project-overlay">
                     <div className="project-title">
                       <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                      <p className="text-sm text-white/80 mb-2">{project.category}</p>
                       <p className="text-sm text-white/70">{project.description}</p>
                     </div>
                   </div>
@@ -112,22 +124,18 @@ const Projects = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-16 text-center max-md:[&>*:last-child]:col-span-2 max-md:[&>*:last-child]:mx-auto max-md:[&>*:last-child]:max-w-fit">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">100+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</div>
               <div className="text-muted-foreground">Završenih projekata</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">30+</div>
               <div className="text-muted-foreground">Zadovoljnih klijenata</div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">6+</div>
               <div className="text-muted-foreground">Godina iskustva</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">24/7</div>
-              <div className="text-muted-foreground">Podrška</div>
             </div>
           </div>
         </div>

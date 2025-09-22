@@ -1,4 +1,4 @@
-import { Building, Zap, Eye, Shovel, Home, Factory } from "lucide-react";
+import { Building, Zap, Eye, Truck, Home, Factory } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -6,25 +6,25 @@ const Services = () => {
       icon: Building,
       title: "Građevinski radovi",
       description: "Kompletan spektar građevinskih usluga - od temelja do krova",
-      features: ["Betoniranje", "Zidanje", "Fasadni radovi", "Krovni radovi"]
+      features: ["Pripremni radovi", "Zemljani radovi", "Betonski i armirano betonski radovi", "Zidarski radovi"]
     },
     {
       icon: Zap,
       title: "Elektrotehničke instalacije",
-      description: "Profesionalne elektro instalacije za sve vrste objekata",
-      features: ["Unutarnje instalacije", "Vanjska rasvjeta", "Industrijske instalacije", "Servis i održavanje"]
+      description: "Profesionalne elektrotehničke instalacije za sve vrste objekata",
+      features: ["Izgradnja elektroenergetske mreže", "Unutarnje instalacije", "Javna rasvjeta", "Dekorativna rasvjeta"]
     },
     {
       icon: Eye,
-      title: "Nadzor projekata",
+      title: "Stručni nadzor projekata",
       description: "Stručni nadzor nad izvođenjem radova",
-      features: ["Tehnički nadzor", "Koordinacija izvođača", "Kontrola kvalitete", "Izvještavanje"]
+      features: ["Elektrotehnički nadzor", "Građevinski nadzor", "Strojarski nadzor"]
     },
     {
-      icon: Shovel,
-      title: "Iskopi i zemljani radovi",
-      description: "Precizni iskopi i priprema terena",
-      features: ["Strojni iskopi", "Ručni iskopi", "Priprema terena", "Odvoz materijala"]
+      icon: Truck,
+      title: "Najam mehanizacije i prijevoz",
+      description: "Pouzdan prijevoz materijala i najam moderne građevinske mehanizacije",
+      features: []
     }
   ];
 
@@ -42,7 +42,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="usluge" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -51,8 +51,8 @@ const Services = () => {
               Naše <span className="text-primary">usluge</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Pružamo kompletan spektar građevinskih i elektrotehničkih usluga 
-              za sve vrste projekata - od malih popravaka do velikih gradilišta.
+              Pružamo kompletan spektar građevinskih i elektrotehničkih usluga
+              za sve vrste projekata - od malih radova do velikih gradilišta.
             </p>
           </div>
 
@@ -119,7 +119,7 @@ const Services = () => {
               Trebate ponudu za svoj projekt?
             </p>
             <button
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}
               className="btn-construction"
             >
               Kontaktirajte nas
