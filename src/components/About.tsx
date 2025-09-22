@@ -35,8 +35,7 @@ const About = () => {
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Osnovali smo tvrtku 2018. godine s ciljem pružanja vrhunskih građevinskih
-              i elektrotehničkih usluga. Naše iskustvo i predanost kvaliteti čine nas
-              idealnim partnerom za vaš sljedeći projekt.
+              i elektrotehničkih usluga.
             </p>
           </div>
 
@@ -60,8 +59,8 @@ const About = () => {
                 </p>
                 <p>
                   Naši klijenti uključuju poslovne subjekte koji traže pouzdane partnere
-                  za velike projekte, kao i privatne osobe koje žele kvalitetno obaviti
-                  radove na svojim nekretninama.
+                  za svoje projekte, kao i privatne osobe koje žele kvalitetno obaviti
+                  radove na svojim projektima.
                 </p>
               </div>
             </div>
