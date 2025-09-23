@@ -34,17 +34,18 @@ jobs:
         run: npm run build
 
       # 5. Korak: Deployaj na FTP server koristeći gotovu akciju
-      - name: SFTP Deploy
-        uses: larytet/sftp-action@v1
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           # Podaci za spajanje dolaze iz GitHub Secrets koje si ranije postavio
-          host: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 22
+
           # Mapa na tvom virtualnom serveru koju treba uploadati
           # './dist/' je standardni output 'npm run build'
-          path: ./dist/
+          local-dir: ./dist/
+
           # Odredišna mapa na Hostinger serveru
           # 'public_html/' je standardna mapa za web sadržaj
-          remotePath: ./public_html
+          server-dir: public_html/
