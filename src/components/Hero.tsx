@@ -54,7 +54,7 @@ const Hero = () => {
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             <span className="block">GRADNJA</span>
-            <span className="text-primary block mt-2">ANTE I MARKO</span>
+            <span className="text-primary block mt-2">ANTE I MARKOo</span>
           </h1>
 
           {/* Subtitle */}

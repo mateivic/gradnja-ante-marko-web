@@ -1,0 +1,51 @@
+# Ime ovog workflowa koje će se prikazivati na GitHubu
+name: Build and Deploy to Hostinger
+
+# Okidač: Pokreni ovaj workflow na svaki 'push' na 'main' branch
+on:
+  push:
+    branches:
+      - main
+
+# Poslovi (jobs) koje treba izvršiti
+jobs:
+  build-and-deploy:
+    # Koristi najnoviju verziju Ubuntua za virtualni server
+    runs-on: ubuntu-latest
+
+    # Koraci (steps) koje treba izvršiti redom
+    steps:
+      # 1. Korak: Preuzmi kod iz repozitorija
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Korak: Postavi Node.js okolinu (navedi verziju koju koristiš)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22" # Promijeni u svoju verziju Node.js ako je potrebno
+
+      # 3. Korak: Instaliraj ovisnosti (dependencies)
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Korak: Buildaj projekt (kreiraj 'dist' folder)
+      - name: Build project
+        run: npm run build
+
+      # 5. Korak: Deployaj na FTP server koristeći gotovu akciju
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          # Podaci za spajanje dolaze iz GitHub Secrets koje si ranije postavio
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+
+          # Mapa na tvom virtualnom serveru koju treba uploadati
+          # './dist/' je standardni output 'npm run build'
+          local-dir: ./dist/
+
+          # Odredišna mapa na Hostinger serveru
+          # 'public_html/' je standardna mapa za web sadržaj
+          server-dir: public_html/
