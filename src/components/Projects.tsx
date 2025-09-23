@@ -53,10 +53,10 @@ const Projects = () => {
     },
     {
       id: 8,
-      title: "Gabijanski zid",
+      title: "Gabionski zid",
       category: "Građevinski radovi",
       image: "zid.jpg",
-      description: "Izrada potpornog gabijanskog zida i sanacija prometnice"
+      description: "Izrada potpornog gabionskog zida i sanacija prometnice"
     }
   ];
 
