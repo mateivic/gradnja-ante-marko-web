@@ -13,7 +13,7 @@ const Footer = () => {
               <div className="flex flex-col items-start space-y-2 mb-4">
                 <div>
                   <img
-                    src="/src/assets/logo.png"
+                    src="/assets/logo.png"
                     alt="Gradnja Ante i Marko logo"
                     className="h-12"
                   />

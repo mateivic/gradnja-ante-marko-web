@@ -32,7 +32,7 @@ const Header = () => {
           <div className="flex items-center space-x-3 cursor-pointer"
             onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: 'smooth' })}>
             <img
-              src="/src/assets/logo.png"
+              src="/assets/logo.png"
               alt="Gradnja Ante i Marko logo"
               className="h-12 w-auto"
             />
