@@ -1,51 +1,47 @@
-# Ime ovog workflowa koje će se prikazivati na GitHubu
-name: Build and Deploy to Hostinger
+# Ime workflowa
+name: Build and Deploy via LFTP
 
-# Okidač: Pokreni ovaj workflow na svaki 'push' na 'main' branch
+# Okidač: Pokreni na 'push' na 'main' branch
 on:
   push:
     branches:
       - main
 
-# Poslovi (jobs) koje treba izvršiti
+# Poslovi koje treba izvršiti
 jobs:
   build-and-deploy:
-    # Koristi najnoviju verziju Ubuntua za virtualni server
+    # Koristi najnoviju verziju Ubuntua
     runs-on: ubuntu-latest
 
-    # Koraci (steps) koje treba izvršiti redom
+    # Koraci
     steps:
-      # 1. Korak: Preuzmi kod iz repozitorija
+      # 1. Preuzmi kod iz repozitorija
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2. Korak: Postavi Node.js okolinu (navedi verziju koju koristiš)
+      # 2. Postavi Node.js okolinu
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "22" # Promijeni u svoju verziju Node.js ako je potrebno
+          node-version: "22"
 
-      # 3. Korak: Instaliraj ovisnosti (dependencies)
+      # 3. Instaliraj ovisnosti
       - name: Install dependencies
         run: npm install
 
-      # 4. Korak: Buildaj projekt (kreiraj 'dist' folder)
+      # 4. Buildaj projekt (kreiraj 'dist' folder)
       - name: Build project
         run: npm run build
 
-      # 5. Korak: Deployaj na FTP server koristeći gotovu akciju
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          # Podaci za spajanje dolaze iz GitHub Secrets koje si ranije postavio
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+      # 5. Instaliraj LFTP klijent
+      - name: Install lftp
+        run: sudo apt-get -y install lftp
 
-          # Mapa na tvom virtualnom serveru koju treba uploadati
-          # './dist/' je standardni output 'npm run build'
-          local-dir: ./dist/
-
-          # Odredišna mapa na Hostinger serveru
-          # 'public_html/' je standardna mapa za web sadržaj
-          server-dir: public_html/
+      # 6. Deployaj na Hostinger koristeći LFTP
+      - name: Deploy to Hostinger
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -Rnev ./dist /public_html --parallel=5 --exclude-glob .git* --exclude .git/"
